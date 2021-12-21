@@ -11,7 +11,7 @@ def main():
 
     response = requests.get("https://www.naver.com/")
 
-    print('step2' + str(response.content) )
+    print('step2' + str(response.content))
 
     # Articles link list
     urls = scrape_news_list_page(response)

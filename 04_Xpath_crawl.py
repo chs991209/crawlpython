@@ -1,5 +1,5 @@
-import lxml.html
 import requests
+from lxml.html import fromstring
 
 
 def main():
@@ -12,27 +12,41 @@ def main():
     response = session.get("https://www.naver.com/")
 
     # Articles link list
+    print('Article link')
+    # print(response.content)
+
     urls = scrape_news_list_page(response)
 
-    
-
-    for url in urls:
-        print(url)
-        # Write
+    # for url in urls:
+    #     # print(url)
+    #     # Write File
 
 
 def scrape_news_list_page(response):
     # Blank list
-    urls = []
+    urls = {}
 
     # Tag str saving
-    root = lxml.html.fromstring(response.content)
+    root = fromstring(response.content)
 
-    for a in root.cssselect('.list_goods .good_item .goods_area'):
-       url = a.get('href')
-       urls.append(url)
+    for a in root.xpath('//a[@class="thumb"]'):
+        # print(tostring(a, pretty_print=True))
+        print(a)
+        name, url = extract_contents(a)
+        #     Dictionary
+        urls[name] = url
 
-    return urls
+    # return urls
+
+
+def extract_contents(dom):
+    #     Link url
+    link = dom.get("href")
+    name = dom.xpath('./img')[0].get('alt')
+    print('')
+    print('Name')
+    print(name)
+    return name, link
 
 
 if __name__ == '__main__':
