@@ -15,37 +15,39 @@ def main():
     print('Article link')
     # print(response.content)
 
+    # GETTING News Link Dictionary
     urls = scrape_news_list_page(response)
 
-    # for url in urls:
-    #     # print(url)
-    #     # Write File
+    for name, url in urls.items():
+        print(name, url)
+        # Write File
 
 
 def scrape_news_list_page(response):
-    # Blank list
+    # URL Dictionary Declare
     urls = {}
 
-    # Tag str saving
+    # Tag Info String Save
     root = fromstring(response.content)
 
     for a in root.xpath('//a[@class="thumb"]'):
         # print(tostring(a, pretty_print=True))
-        print(a)
+
+        # a의 구조, 메모리 주소 확인
+        # print(a)
+
         name, url = extract_contents(a)
         #     Dictionary
         urls[name] = url
 
-    # return urls
+    return urls
 
 
 def extract_contents(dom):
     #     Link url
     link = dom.get("href")
     name = dom.xpath('./img')[0].get('alt')
-    print('')
-    print('Name')
-    print(name)
+
     return name, link
 
 
