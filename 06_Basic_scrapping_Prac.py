@@ -24,7 +24,7 @@ for c in params:
     # print(c)
     # urlencode -> dict or tuple 을 string(또는 bytes) 형의 query 문자열 ( key=value, ..) 로 변환
     #
-    # string >> 한 가지 key 에 대한 value 값이 두 개 이상일 때, doseq = True 일 때 string 자료형으로 여러 개의 param으로 바꿈
+    # string >> 한 가지 key 에 대한 value 값이 두 개 이상일 때, doseq = True 일 때 string 자료형으로 여러 개의 param 으로 바꿈
     # doseq = False 이면 bytes 형태로 바꿈
     param = urllib.parse.urlencode(c)
 
