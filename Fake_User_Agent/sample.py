@@ -24,3 +24,8 @@ for b in range(0, 5):
 
 
 print(list_test[0:5])
+
+string = "Hey! What's up bro?"
+
+new_string = ''.join(char for char in string if char.isalnum())
+print(new_string)
