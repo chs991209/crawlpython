@@ -7,16 +7,16 @@ def main():
     """
     Naver Scrapping
     """
-    print('step1')
+    print("step1")
 
     response = requests.get("https://www.naver.com/")
 
-    print('step2' + str(response.content))
+    print("step2" + str(response.content))
 
     # Articles link list
     urls = scrape_news_list_page(response)
 
-    print('step3' + str(urls) )
+    print("step3" + str(urls))
 
     for url in urls:
         print(url)
@@ -30,12 +30,12 @@ def scrape_news_list_page(response):
     # Tag str saving
     root = lxml.html.fromstring(response.content)
 
-    for a in root.cssselect('.group_nav .list_nav.type_fix .nth-child(1) '):
-       url = a.get('href')
-       urls.append(url)
+    for a in root.cssselect(".group_nav .list_nav.type_fix .nth-child(1) "):
+        url = a.get("href")
+        urls.append(url)
 
     return urls
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

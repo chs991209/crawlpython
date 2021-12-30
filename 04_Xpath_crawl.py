@@ -12,7 +12,7 @@ def main():
     response = session.get("https://www.naver.com/")
 
     # Articles link list
-    print('Article link')
+    print("Article link")
     # print(response.content)
 
     # GETTING News Link Dictionary
@@ -46,10 +46,10 @@ def scrape_news_list_page(response):
 def extract_contents(dom):
     #     Link url
     link = dom.get("href")
-    name = dom.xpath('./img')[0].get('alt')
+    name = dom.xpath("./img")[0].get("alt")
 
     return name, link
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

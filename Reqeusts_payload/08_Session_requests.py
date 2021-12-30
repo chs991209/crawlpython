@@ -25,19 +25,18 @@ import requests
 
 s = requests.Session()
 
-r1 = s.get('https://httpbin.org/cookies', cookies={'name': 'Kim1'})
+r1 = s.get("https://httpbin.org/cookies", cookies={"name": "Kim1"})
 print(r1.text)
 
 # SET Cookies
 
-r2 = s.get('https://httpbin.org/cookies/set', cookies={'name': 'Kim2'})
+r2 = s.get("https://httpbin.org/cookies/set", cookies={"name": "Kim2"})
 print(r2.text)
 
 # User-Agent
-url = 'https://httpbin.org'
+url = "https://httpbin.org"
 headers = {
-    'user-agent': 'iPad',
-
+    "user-agent": "iPad",
 }
 
 # Headers Info Transfer
@@ -45,9 +44,7 @@ headers = {
 # url 은 request url, kwargs 는 headers 와 같은 key arguments
 # 같은 경로의 request method 의 method arguments 를 'GET' 으로 반환해, GET request 를 보낸다.
 # request 의 url, kwargs 는 get 에서 대입한 값을 가져간다.
-r3 = s.get(url, headers=headers, cookies={'name': 'Kim2'})
+r3 = s.get(url, headers=headers, cookies={"name": "Kim2"})
 
 print(r3.text)
 s.close()
-
-
