@@ -56,24 +56,24 @@ list_elem = []
 
 
 #
-class DictArgs(
-    len_index=None,
-):
-    for index, (key, elem) in enumerate(shop_list.items()):
-        list_index.append(index + 1)
-        list_key.append(key)
-        list_elem.append(elem)
-
-
-# for _index, _key, _value in range(len(list_index)):
-
-# html area
-material_01 = "Num : {}, Name : {}, Price : {}".format(
-    list_index[0], list_key[0], list_elem[0]
-)
-
-
-print(material_01)
+# class DictArgs(
+#     len_index=None,
+# ):
+#     for index, (key, elem) in enumerate(shop_list.items()):
+#         list_index.append(index + 1)
+#         list_key.append(key)
+#         list_elem.append(elem)
+#
+#
+# # for _index, _key, _value in range(len(list_index)):
+#
+# # html area
+# material_01 = "Num : {}, Name : {}, Price : {}".format(
+#     list_index[0], list_key[0], list_elem[0]
+# )
+#
+#
+# print(material_01)
 
 
 # print(str(index) + ' ' + str(key) + ' ' + 'elem')
@@ -90,3 +90,5 @@ print(material_01)
 #
 # student_01 = home[1]
 # print(student_01)
+myname = 'homolkajsldfkj23!@@@kdsjfl'
+print(myname.isalnum())
