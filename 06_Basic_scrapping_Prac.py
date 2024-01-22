@@ -16,7 +16,7 @@ params = []
 for num in [1001, 1012, 1013, 1014]:
     params.append(dict(ctxCd=num))
 
-# print(params)
+print(params)
 
 
 # Request in a row
