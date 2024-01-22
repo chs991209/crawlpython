@@ -46,7 +46,8 @@ for line in response.iter_lines():
 
 session.close()
 
-response = session.get('https://jsonplaceholder.typeicode.com/todos/1')
+# response = session.get('https://jsonplaceholder.typeicode.com/todos/1')
+response = session.post('https://httpbin.org/post')
 
 # if response.status_code == 200:
 #     try:
@@ -70,7 +71,7 @@ print()
 print('Response Header Is : {}'.format(response.headers))
 print('Response Text Is : {}'.format(response.text, '\n'))
 print('Response Binary Content Is : {}'.format(response.content, '\n'))
-# print(response.json())
+print(response.json())
 
 # print('Response String Data is: {}'.format(response.text))
 # print('Response String Data length is: {}'.format(len(response.text)))
